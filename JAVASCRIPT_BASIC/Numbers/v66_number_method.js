@@ -100,3 +100,11 @@ console.log(`${parseFloat(`10 20 30`)}`); // 10
 console.log(`${parseFloat(`10 years`)}`); // 10
 console.log(`${parseFloat(`years 10`)}`); // NaN
 console.log(`${parseFloat(`012`)}`); // 12
+
+
+// ===============================
+
+console.log(Math.random());
+
+let random_num = Math.floor(Math.random()*100);
+console.log(random_num);

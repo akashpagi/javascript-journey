@@ -1,1 +1,37 @@
+# Folders
 /JS_NOTES/
+/JS_NOTES/jghjJAVASCRIPT- ADVANCED_files
+
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Compiled or generated files
+*.log
+*.bak
+*.tmp
+*.swp
+*.orig
+
+# Cache and temp folders
+.cache/
+temp/
+tmp/
+
+# Personal notes or backup files
+*.md~
+*~
+*.notes.txt
+*.draft.*
+*.txt
+*.docx
+
+
