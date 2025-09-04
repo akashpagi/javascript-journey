@@ -1,0 +1,49 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+/* for id */
+
+h3 {
+    color: #156fcf;
+    text-align: center;
+    font-weight: 600;
+}
+
+#sub-span {
+    color: #f88306;
+    text-align: center;
+    font-weight: 800;
+}
+
+h4 {
+    color: #f71854fc;
+    text-align: center;
+    font-weight: 500;
+}
+
+#para1, #para2 {
+    color: #113354;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
+} 
+
+/*  For Dynamic Style Manipulation  */
+.para-class-2 {
+    color: #2e4d6c;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
+    background-color:rgb(249, 159, 230);
+} 
+
+.para-class-3 {
+    color: #2e4d6c;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
+    background-color:rgb(127, 231, 160);
+} 

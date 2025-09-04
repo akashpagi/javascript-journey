@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Element Properties</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="node_style.css">
+</head>
+<body>
+    <div id="my-div">
+        <h3 id="myheading">Element Objects Method</h3>
+        <h4> Programming Languages</h4>
+        <ul id="myul">
+            <li id="py">Python</li>
+            <li>PHP</li>
+            <li>Java</li>
+        </ul>
+    </div>
+    <span id="myspan">Span Replcae</span>
+
+    <div id="mydiv"></div>
+
+    <script>
+        console.log("----- Element objects methods -----");
+
+        // Get the element with the ID 'myul'
+        let element = document.getElementById('myul');
+        // console.log(element); // Uncomment this line to check the retrieved element
+
+        // Cloning the Node
+        // cloneNode(true) creates a deep copy of the 'element', 
+        // which means it will clone the element and all its child nodes (descendants) as well.
+        let duplicateNode = element.cloneNode(true);
+        // console.log(duplicateNode); // Uncomment this line to see the cloned node
+
+        // Checking the Existence of duplicateNode
+        // The duplicateNode is currently in memory and is not part of the document yet.
+        // You can verify that the node is not in the document body by uncommenting the following line.
+        // console.log(document.body); // Uncomment this line to check the current state of the document body
+
+        // Appending the Cloned Node
+        // Get the element with the ID 'mydiv' to append the cloned node.
+        let div = document.getElementById('mydiv');
+
+        // Append the duplicateNode to the 'mydiv' element.
+        div.appendChild(duplicateNode);
+
+        // Log the updated 'mydiv' element to see that the cloned node is now inside it.
+        console.log(div);
+
+        
+        // ++++++++++++++++++++++++++++++++++++++++++++++
+        
+        // // removeChild() // deprecated soon
+        // // Get the element with the ID 'myul'
+        // let element = document.getElementById('myul');
+        
+        // // let delNode = element.removeChild(element.firstElementChild);
+        // // let delNode = element.removeChild(element.lastElementChild);
+        // // let delNode = element.removeChild(element.childNodes[3]);
+        // // Get the element with the ID 'py'
+        // let item = document.getElementById('py');
+
+        // // Remove the item from its parent node
+        // // let delNode = item.parentNode.removeChild(item);
+
+        // // console.log(item.parentNode);
+
+        // // Log the removed node (delNode) to the console
+        // console.log(delNode);
+    
+        // ++++++++++++++++++++++++++++++++++++++++++++++
+
+        // // replaceChild()
+
+        // let parent = document.getElementById('myul');
+        // let oldChild = document.getElementById('py');
+
+        // // Creating a newChild & Replacing with oldChild
+        // let newChild = document.createElement('li');
+        // newChild.textContent = 'This is new span';
+
+        // // let replaced_element = parent.replaceChild(newChild, oldChild);
+       
+        // // console.log(replaced_element);
+        // // console.log(parent);
+
+        // // Replace with existing element
+        // let existing_span = document.getElementById('myspan');
+        // // console.log(replaceSpan);
+        // let replace_node = parent.replaceChild(existing_span, oldChild);
+        // console.log(replace_node);
+        // console.log(parent);
+
+
+
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINDOW OBJECTS: Dialog Box Methods</Dialog></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">Wondow Objects: </span>Dialog Box Methods</h3>
+
+    <h4>alert(), confirm() & prompt()</h4>
+   
+
+
+
+    
+    <script>
+        console.log(`Window Object: Dialog Box Methods`);
+
+        // alert()
+        // let a = 20;
+        // window.alert(`I am alert !`);
+        // alert(`Alert Function`);
+        // alert(`${ a }`);
+        // alert(4+2);
+        // alert(`a : ${ a }`);
+
+        
+        // confirm()
+
+        // // let crn = confirm(`Are you sure ?`);
+        // let crm = confirm(`Do you want to delete ?`);
+        // console.log(crm);
+    
+        // if (crm){
+        //     console.log(`Data deleted !`);
+        // } else {
+        //     console.log(`Action Cancelled !`);
+        // }  
+        
+        
+        // prompt()
+        // let name = prompt(`Enter your name :`);
+        // let name = prompt(`Enter your name :`, `Ex. Luffy`); // wit defualt text
+        // console.log(name);
+
+
+        // Step 1: Welcome the user
+        alert("Welcome to the Login System!");
+
+        // Step 2: Ask for username
+        let username = prompt("Enter your username:");
+
+        if (username) {  // Check if user entered something
+            // Step 3: Confirm login action
+            let isConfirmed = confirm(`Are you sure you want to login as "${username}"?`);
+
+            if (isConfirmed) {
+                alert(`Login successful! Welcome, ${username}.`);
+                console.log(`User "${username}" logged in successfully.`);
+            } else {
+                alert("Login cancelled!");
+                console.log("User cancelled the login.");
+            }
+        } else {
+            alert("Username cannot be empty!");
+            console.log("User didn't enter a username.");
+        }
+
+       
+    </script>
+</body>
+</html> 

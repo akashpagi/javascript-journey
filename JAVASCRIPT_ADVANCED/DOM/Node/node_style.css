@@ -1,0 +1,68 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+#myheading{
+    color: #f84071fc;
+    font-weight: 800;
+    text-align: center;
+}
+
+p {
+    color: #2d4054;
+    text-align: justify;
+    text-align: center;
+} 
+
+h3 {
+    color: rgb(232, 15, 131);
+    text-align: center;
+}
+
+h4{
+    margin: 10px 10px; 
+    text-align: center;
+}
+
+#inner-div > h4 {
+    color: rgb(0, 133, 122);
+    text-align: center;
+}
+
+#outer-div > h4 {
+    color: rgb(210, 3, 61);
+    text-align: center;
+}
+
+#inner-div {
+    color: rgb(3, 57, 220);
+    font-weight: 600;
+    text-align: center;
+}
+
+#outer-div {
+    border: 2px solid red; 
+    padding: 10px; 
+    border-radius: 8px; 
+    background: #f7859e;
+    text-align: center;
+}
+
+#inner-div {
+    border: 2px solid rgb(1, 175, 160); 
+    border-radius: 8px; 
+    background: #b3ebf4;
+    margin: 10px 10px; 
+    text-align: center;
+}
+
+#div-1, #div-2, #div-3 {
+    display: inline-block;
+    border: 2px solid blue;
+    border-radius: 8px; 
+    background: #78b5f6;
+    margin: 5px 10px 20px; 
+    padding: 10px; 
+    text-align: center;
+}
+

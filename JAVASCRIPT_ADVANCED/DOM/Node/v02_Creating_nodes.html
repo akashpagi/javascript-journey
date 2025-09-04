@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+    <head id="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title">CREATING NODES</title>
+        <!-- Google Fonts Link for Poppins -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- External CSS -->
+        <link rel="stylesheet" href="node_style.css">
+    </head>
+    <body>
+        <div id="my-div">
+            <h3>CREATING NODES</h3>
+        </div>
+
+        <script>
+            console.log(`CREATING NODES`);
+
+            console.log(`----- createElemetn(TagName) ----`);
+
+            let newElementNode = document.createElement("p");
+            console.log(newElementNode);
+            
+            console.log(`----- createTextNode(string) ---`);
+            let newTextNode = document.createTextNode("This is Text Node Created by createTextNode() !");
+            console.log(newTextNode);
+           
+            console.log(`----- createComment(string) ----`);
+            let newCommentNode = document.createComment("This is Comment Node !");
+            console.log(newCommentNode)
+          
+            console.log(`----- createDocumentFragment() ----`);
+            // empty Document fragument
+            let newDocFragNode = document.createDocumentFragment();
+            console.log(newDocFragNode);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+/* for id */
+
+h3 {
+    color: #0356b0;
+    text-align: center;
+    font-weight: 600;
+}
+
+#sub-span {
+    color: #e60659;
+    text-align: center;
+    font-weight: 800;
+}
+
+h4 {
+    color: #f71854fc;
+    text-align: center;
+    font-weight: 500;
+}
+
+#para {
+    color: #34495e;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
+} 

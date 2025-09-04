@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Element Properties</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="node_style.css">
+</head>
+<body>
+    <h3 id="myheading">
+        Methods & Properties of Text Nodes
+    </h3>
+
+    <span id="myspan">span tag</span><br>
+    <span id="myspan-1">This is 2nd span</span>
+
+    <script>
+        console.log("----- Properties & Methods of Text Nodes -----");
+
+        // // Length: Returns the number of characters in the text node.
+        // let headingForLength = document.getElementById('myheading');
+        // console.log('Length with textContent:', headingForLength.textContent.length); // Includes white spaces and newlines
+        // console.log('Length with firstChild:', headingForLength.firstChild.length);  // Includes white spaces and newlines
+        // console.log('Length with innerText:', headingForLength.innerText.length);    // Excludes white spaces and counts only visible text
+
+        // // Data: Accesses and modifies the text content.
+        // let headingForData = document.getElementById('myheading');
+        // console.log('Original Data:', headingForData.firstChild.data);
+        // headingForData.firstChild.data = 'The new Data!';
+        // console.log('Modified Data:', headingForData.firstChild.data);
+
+        // // appendData: Appends data to the text node.
+        // let spanForAppend = document.getElementById('myspan');
+        // spanForAppend.firstChild.appendData(' This is appendData!');
+        // console.log('After appending data:', spanForAppend);
+
+        // // deleteData: Deletes a specified range of characters.
+        // let spanForDelete = document.getElementById('myspan-1');
+        // spanForDelete.firstChild.deleteData(0, 5); // Deletes the first 5 characters
+        // console.log('After deleting data:', spanForDelete);
+
+        // // insertData: Inserts a string at the specified position.
+        // let spanForInsert = document.getElementById('myspan-1');
+        // spanForInsert.firstChild.insertData(5, 'Data inserted ');
+        // console.log('After inserting data:', spanForInsert);
+
+        // // replaceData: Replaces a specified range of characters.
+        // let spanForReplace = document.getElementById('myspan');
+        // spanForReplace.firstChild.replaceData(5, 8, 'element');
+        // console.log('After replacing data:', spanForReplace);
+
+        // // splitText: Splits the text node into two nodes.
+        // let spanForSplit = document.getElementById('myspan-1');
+        // let newTextNodeAfterSplit = spanForSplit.firstChild.splitText(8);
+        // console.log('Original Text Node:', spanForSplit);
+        // console.log('New Text Node:', newTextNodeAfterSplit);
+
+        // substringData() : It extracts a substring  from the text node, starting at a specified index and for a given number of characters.
+        let spanForSubstring = document.getElementById('myspan-1');
+        // let newTextNodeAfterSubstring = spanForSubstring.firstChild.substringData(0, 4);
+        let newTextNodeAfterSubstring = spanForSubstring.firstChild.substringData(5,11);
+        // console.log('Original Text Node:', spanForSubstring);
+        console.log('New Text Node:', newTextNodeAfterSubstring);
+    </script>
+</body>
+</html>
+
+
+
+
+
+

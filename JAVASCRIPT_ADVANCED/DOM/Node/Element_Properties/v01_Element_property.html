@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Element Properties</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="node_style.css">
+</head>
+<body>
+    <div id="my-div">
+        <h3 id="myheading">innerHTML, outerHTML & innerText</h3>
+        <!-- <h4> Programming Languages, Library & Framework</h4>
+        <ul id="myul">
+            <li>Python</li>
+            <li id="dj">Django</li>
+            <li id="sql">MySQL</li>
+        </ul> -->
+    </div>
+
+    <h4> Programming Languages, Library & Framework</h4>
+    <ul id="myul"><li>Python</li><li>Django</li><li>MySQL</li></ul>
+
+    <script>
+        console.log("----- Element Properties & methods -----");
+
+        // // ++++++++++++++++++++++++++++++++++++++++++
+
+   
+        // let content = document.getElementById('myul');
+        // // console.log(content);
+        // // console.log(content.innerText);
+        // // console.log(content.childNodes);
+
+        // // Replace the content
+        // // content.innerText = "This is innerText !";
+        // console.log(content.innerText);
+        // console.log(content.childNodes);
+        
+
+        // // Replacing the innerHTML with empty string
+        // content.outerHTML = '';
+
+        // console.log(content);
+
+
+        // // Retrun outetr HTML of element
+        // console.log(content.outerHTML);  // Return outer HTML element + inner HTML Element
+        // console.log(content.innerHTML); // Return only inner HTML element
+
+
+        // // Add the outerHTML element
+        // content.outerHTML = '<p> This i P tag </p>';
+        // console.log(content);
+ 
+
+       // ++++++++++++++++++++++++++++++++++++++++++
+
+        // // Get references to elements
+        // let div = document.getElementById('my-div');
+        // let content = document.getElementById('myul'); 
+
+        // // Log the original outerHTML of the <ul> element
+        // console.log("Original outerHTML of <ul>:");
+        // console.log(content.outerHTML);
+
+        // // Replace the <ul> element with an empty string
+        // content.outerHTML = '';
+        // console.log("After replacing <ul> with empty string, <ul> is removed.");
+
+        // // // // Add new content to replace the removed <ul>
+        // // content.outerHTML = '<p>This is a p tag.</p>';
+        // // console.log(div);
+
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++
+
+
+        // let content = document.getElementById('myul');
+        // // console.log(content);
+
+        // // show inner HTML of element
+        // // console.log(content.innerHTML);
+
+        // // Replacing the innerHTML with empty string
+        // content.innerHTML = '';
+
+        // // Replacing the innerHTML element
+        // content.innerHTML = '<li> Numpy </li> <li> Pandas </li> <li> Seaborn </li>';
+ 
+
+    </script>
+</body>
+</html>
+

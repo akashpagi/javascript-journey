@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Base File</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- id -->
+    <!-- <h2>I'm learning JS ADVANCED</h2>
+    <h4 id="show">It's me, Akash!</h4>
+    <p id="para">
+        blanditiis estias! ti temporibus deserunt ipsam reprehenderit non quasi iure!
+        <span> This is first span tag !</span>
+        <span> This is 2nd span tag !</span>
+        <em> This is em tag !</em>
+        <a href="">Click Me</a>
+    </p>
+
+    <p id="para1">
+        Lorem  asperiores rem consequuntur quae ea ipsa sed a unde eum iusto atque ipsam!
+    </p>
+
+    <div>
+        <p>1st p inside div</p>
+        <p>2nd p inside div</p>
+        <span> This is span in div</span>
+    </div> -->
+
+    <!-- class -->
+    <!-- <h3 class="show heading">It's me, Akash!</h3>
+    <p class="para">
+        blanditiis estias! ti temporibus deserunt ipsam reprehenderit non quasi iure! <br>
+        <span> This is first span tag !</span><br>
+        <span> This is 2nd span tag !</span> <br>
+        <em> This is em tag !</em> <br>
+        <a href="3">Click Me</a>
+    </p>
+
+    <p class="para1">
+        Lorem  asperiores rem consequuntur quae ea ipsa sed a unngde eumpsam!
+    </p>
+
+    <div class="show">
+        <p class="para">1st p inside div</p>
+        <p class="para">2nd p inside div</p>
+    </div> -->
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+    <!-- For qureySelector() & querySelectorAll() -->
+    <h3 class="show"> It's me, Akash! </h3>
+    <h3 id="show1">Welcome to my WebPage !</h3>
+    <h4>Now</h4>
+    
+
+    <p class="para">
+        blanditiis estias! ti temporibus deserunt ipsam reprehenderit non quasi iure! <br>
+        <span> This is first span tag !</span><br>
+        <span> This is 2nd span tag !</span> <br>
+        <em> This is em tag !</em> <br>
+        <p class="mypara"> Lorem  asperiores rem consequuntur quae ea ipsa sed a unngde eumpsam! </p>
+    </p>
+
+    <p class="para1"> Lorem  asperiores rem consequuntur quae ea ipsa sed a unngde eumpsam! </p>
+
+    <div id="show2">
+        <p>1st p inside div</p>
+        <p class="para" id="mypara">
+            2nd p inside div
+            <span class="myspan"> This is span tag ! inside p tag ! </span> <br>
+        </p>
+
+        <span class="myspan">  span tag inside div tag !</span> <br>
+        
+    </div>
+
+    
+    <p id="show2">
+        <p>1st p inside div</p>
+        <p class="para">
+            2nd p inside div
+            <span class="myspan"> This is span tag ! inside p tag ! </span> <br>
+        </p>  
+    </p>
+
+    <div class="myspan">
+        <p> div without anything </p>
+    </div>
+
+
+    <p class="para2"> Last Paragraph </p>
+
+    <div class="pa">Div 1</div>
+    <div class="pa-text">Div 2</div>
+    <div class="para">Div 3</div>
+
+    <ul id="mylist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+
+
+
+
+    <!-- DOM Element Access Methods -->
+    <script>
+        console.log(`DOM - Element Access Methods`);
+
+        // // querySelectorAll()
+        //  select all elements in a document that match a specified CSS selector. 
+        //  It returns a static NodeList, which is a collection of elements.
+
+        // // Element Selector
+        // let element_selector_list = document.querySelectorAll("p");
+        // // console.log(element_selector_list);
+
+        //  // Group Selector
+        // let multiple_element_selector = document.querySelectorAll("h3, div");
+        // console.log(multiple_element_selector);
+
+        // // Universal Selector
+        // let universal_selector = document.querySelectorAll("*"); 
+        // console.log(universal_selector); 
+
+        // // // ID Selector
+        // // let id_selector = document.querySelectorAll("#show2");
+        // let id_selector = document.querySelectorAll("div#show2"); // specificv element
+        // console.log(id_selector);
+
+        // // // class Selector or Style Class
+        // let class_selector = document.querySelectorAll(".para"); 
+        // console.log(class_selector);
+
+        // Element specific style class
+        // let specific_class = document.querySelectorAll("span.myspan"); 
+        // console.log(specific_class);
+
+        // // Attribute Selector
+        // let attribute_selector = document.querySelectorAll("div[id]"); 
+        // let attribute_selector = document.querySelectorAll("p[class = 'para']"); 
+        // let attribute_selector = document.querySelectorAll("p[class = 'para'][id='mypara']"); 
+
+        // let class_attribute_contain = document.querySelectorAll('p[class*="para"]'); // Here class contain 'para' 
+        // console.log(class_attribute_contain);
+
+        // let class_attribute_sub = document.querySelectorAll('p[class~="para"]'); // Subsequent-sibling combinator
+        // console.log(class_attribute_sub);
+
+        //  matches when the attribute starts with the given value (no conditions about separators).
+        // let class_attribute_start = document.querySelectorAll('p[class ^= "p"]'); // start with
+        // console.log(class_attribute_start);
+
+        // matches when the attribute is exactly the given value or starts with it followed by a dash (-).
+        // let class_attribute_starting = document.querySelectorAll('[class |= "pa"]');
+        // console.log(class_attribute_starting);
+
+        // let class_attribute_ends = document.querySelectorAll('[id $= "1"]');
+        // console.log(class_attribute_ends);
+
+        // // Pseduo Class
+        // let pseduo_class = document.querySelectorAll("li:first-child"); 
+        // let pseduo_class = document.querySelectorAll(":first-child"); 
+        // let pseduo_class = document.querySelectorAll(":last-child"); 
+
+        // let pseduo_class = document.querySelectorAll("li:nth-child(2)"); 
+        // let pseduo_class = document.querySelectorAll("li:nth-child(even)"); 
+
+        // let pseduo_class = document.querySelectorAll("li:nth-last-child(1)"); 
+        
+        // console.log(pseduo_class);
+
+        let empty = document.querySelectorAll(":empty"); // when element don't have child
+    
+        console.log(empty);
+
+
+     
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // More Specific with querySelectorAll() 
+
+        // let get_data = document.getElementById("show2").querySelectorAll("span.myspan");
+        // let get_data = document.querySelectorAll("#show2 > .para > span.myspan");
+        // console.log(get_data);
+
+
+
+    //    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //    // querySelectorAll Method with Length Property
+        
+    //    let data = document.querySelectorAll(".para");
+    //    console.log(data);
+    //    let len = data.length;
+    //    console.log(len)
+       
+
+       // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // // querySelectorAll Method with Loop
+            
+        // let data = document.querySelectorAll(".para");
+        // let len = data.length;
+
+        // // Access using index
+        // // let data = document.querySelectorAll(".para")[0];
+        // // let data = document.querySelectorAll(".para")[1];
+        // console.log(data);
+
+        // // // Using `for..loop` method 
+        // console.log("-- Using `for...loop` --");
+        // for(let i=0; i < len; i++){
+        //     let result = data[i];
+        //     console.log(result);
+        // }
+        
+        // // // Using `forEach` method 
+        // console.log("-- Using `forEach` --");
+        // data.forEach((elements, index) => {
+        //     console.log(`${index}:`, elements);
+        // });
+
+
+       // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+        // // querySelector()
+        // Return 1st element match of the specified selector or group of selector , if no matches are found null is returned
+        
+        // // Element Selector
+        // let element_selector = document.querySelector("p");
+        // let multiple_element_selector = document.querySelector("p, h3");
+        // console.log(element_selector);
+        // console.log(multiple_element_selector);
+
+        // // ID Selector
+        // let id_selector = document.querySelector("#show");
+        // console.log(id_selector);
+
+        // // class Selector
+        // let class_selector = document.querySelector("#show"); 
+        // console.log(class_selector);
+        // // console.log(multiple_element_selector);
+
+        // +++++++++++++++++++++++++++++++++++++
+
+        // // getElemnetsByClassName()
+        // // let class_name = document.getElementsByClassName("para");
+        // // let class_name = document.body.getElementsByClassName("para");
+        // // document.write(class_name);
+
+        // // with 2 class names
+        // // both class must be present in tag to access class name element
+        // // let class_name = document.body.getElementsByClassName("show heading");
+        // let class_name = document.body.getElementsByClassName("show");
+        // // document.write(class_name);
+
+        // console.log(class_name);
+
+        // +++++++++++++++++++++++++++++++++++++
+
+        // More specific ClassName
+        // let getShow = document.getElementById("show");
+        // let result = getShow;
+        // console.log(result);
+
+        // let get_class_name = document.getElementById("show").getElementsByClassName("para")
+        // console.log(get_class_name);
+
+        // // +++++++++++++++++++++++++++++++++++++
+
+        // // getElementsTagName() with length property
+        // let getParaLength = document.getElementsByClassName("para").length;
+        // console.log("All 'para' class length:", getParaLength);
+        
+        // let classes = document.getElementsByClassName("para");
+        // let len = classes.length;
+        // console.log(classes);
+        // console.log("length of the para class:", len); 
+
+
+        // // +++++++++++++++++++++++++++++++++++++
+
+        // // // getElementsClassName() with loops
+        // let classes = document.getElementsByClassName("para");
+
+        // // Using a `for` loop
+        // let len = classes.length;
+        // // for (let i = 0; i < len; i++) {
+        // //     let result = classes[i];
+        // //     console.log(result);
+        // // }
+
+        // // // Using `for...of` loop
+        // // console.log("-- Using `for...of` loop --");
+        // // for (let c of classes) {
+        // //     console.log(c);
+        // // }
+
+        // // Using `forEach` method with spread operator
+        // // Spread operator `[...]` converts HTMLCollection into a proper array
+        // console.log("-- Using `forEach` with spread operator --");
+        // [...classes].forEach((item, index) => {
+        //     console.log(`${index}:`, item);
+        // });
+
+
+
+        // // getElementById()
+        // // let id_result = document.getElementById("para");
+        // // let id_result = document.getElementById("para1");
+        // let id_result = document.getElementById("show"); // [object HTMLHeadingElement]
+        // document.write(id_result); 
+        // console.log(id_result);
+
+        // getElementsTagName()
+        // let get_tag_names = document.getElementsByTagName("p");
+        // let get_tag_names = document.getElementsByTagName("*"); // retuns all the elements tag names
+        // let get_tag_names = document.body.getElementsByTagName("*"); // only shows body elements tag names
+        // // document.write(get_tag_names); // [object HTMLCollection]
+        // console.log(get_tag_names);
+
+        // +++++++++++++++++++++++++++++++++++++
+
+        // More specific TagName
+
+        // // Select all <span> elements
+        // let getSpan = document.getElementsByTagName("span");
+        // console.log("All <span> elements:", getSpan);
+
+        // // Select all child elements inside <p id="para">
+        // let getAllSpan = document.getElementById("para").getElementsByTagName("span");
+        // let getAll = document.getElementById("para").getElementsByTagName("*");
+        // console.log("Get all span in #para:", getAllSpan);
+        // console.log("All child elements in #para:", getAll);
+
+
+        // // +++++++++++++++++++++++++++++++++++++
+
+        // // getElementsTagName() with length property
+        // let getSpanLength = document.getElementsByTagName("span").length;
+        // console.log("All <span> elements length:", getSpanLength);
+        
+        // let tags = document.getElementsByTagName("span");
+        // let result = tags.length;
+        // console.log(tags);
+        // console.log("length of the span tag:", result);
+        
+
+        // +++++++++++++++++++++++++++++++++++++
+
+        // // getElementsTagName() with loops
+        // let tags = document.getElementsByTagName("span");
+        // // index start from 0
+        // // length start from 1
+        // for(let i = 0; i < tags.length; i++){
+        //     let result = document.getElementsByTagName("span")[i];
+        //     console.log(result);
+        // }
+
+        // // with while loop
+        // let i = 0;
+        // while(i < tags.length){
+        //     console.log(tags[i]);
+        //     i++;
+        // }
+
+
+        // // Using `for...of` loop
+        // console.log("-- Using `for...of` loop --");
+        // for (let tag of tags) {
+        //     console.log(tag);
+        // }
+
+        // // Using `forEach` method with spread operator
+        // // spread Operator [...]: Converts the HTMLCollection into a proper array, enabling the use of array methods like forEach.
+        // console.log("-- Using `forEach` with spread operator --");
+        // [...tags].forEach((tag, index) => {
+        //     console.log(`${index}:`, tag);
+        // });
+
+        // // ++++++++++++++++++++++++++++++++++++++++++++++
+
+
+                   
+        
+    </script>
+
+</body>
+</html>

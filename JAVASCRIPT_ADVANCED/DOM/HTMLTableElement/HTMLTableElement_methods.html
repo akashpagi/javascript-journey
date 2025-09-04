@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins';
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #sub-span {
+            color: #e60659;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #f71854fc;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Table CSS */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 3px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th, tfoot {
+            background-color: #e3e0e0;
+            font-weight: bold;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 3px;
+            color: #019f9c;
+        }
+  
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">HTML Element Interface :</span> HTMLTableElement (Methods) </h3>
+    <div>
+        <table id="mytable" >
+            <caption>My Table Caption</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mentor</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>John Wick</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>James Bond</td>
+                    <td>JavaScript</td>
+                </tr>
+            </tbody>
+            <!-- <tbody></tbody> -->
+            <!-- <tfoot>
+                <tr>
+                    <td colspan="2"> Total Course </td>
+                    <td>2</td> 
+                </tr>
+            </tfoot> -->
+        </table>
+    </div>
+    <script>
+        // HTMLTableElement Methods
+        let table = document.getElementById('mytable');
+
+        /*
+        createCaption : 
+            The .createCaption() method returns the <caption> element of the table.
+            If a <caption> does not exist, it creates one and returns it.
+            If a caption already exists, it simply returns the existing caption.
+        */
+        // let createTableCaption = table.createCaption();
+        // // If table don't have caption
+        // createTableCaption.innerHTML = "This is a dynamically added caption";
+        // console.log(createTableCaption);
+
+        /*
+        deleteCaption:
+            Removes the <caption> element from the table if it exists.
+            If there is no caption, the method does nothing (no error occurs).
+        */
+        // table.deleteCaption();
+
+         // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /*
+        createTHead:
+            Creates and returns a <thead> element if it does not already exist.
+            If <thead> already exists, it returns the existing one.
+        */
+
+        // let thead = table.createTHead();
+        // // console.log(thead); // it returns the existing one.
+
+        // // // Creating <thead> if it doesn't exist
+        // thead.innerHTML = "<thead><tr><th>New ID</th><th>New Mentor</th><th>New Course</th></tr></thead>";
+        // console.log(thead);
+
+        /*
+        deleteTHead:
+           Removes the <thead> element from the table if it exists.
+           If <thead> does not exist, the method does nothing (no error).
+        */
+        // table.deleteTHead();
+
+         // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /* 
+        createTFoot():
+            Creates and returns the <tfoot> element for a table if it doesn’t already exist.
+            If <tfoot> is already present, it returns the existing one.
+        */
+        // let tfoot = table.createTFoot(); 
+        // // console.log(tfoot); //  If <tfoot> is already present, it returns the existing one.
+        // tfoot.innerHTML = "<tr><td colspan='2'>Total New Course </td><td>3</td></tr>";
+        // console.log(tfoot);
+         
+        /*
+        deleteTFoot():
+            Removes the <tfoot> element from a table if it exists.
+            If no <tfoot> is present, it does nothing (no error).
+        */
+        // table.deleteTFoot();
+
+        // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /* insertRow()
+            Adds a new <tr> (row) to a table, <thead>, <tbody>, or <tfoot>.
+            Returns the inserted row as a reference.
+            Syntax: tableElement.insertRow(index);
+            index (optional) → Position where the row will be inserted.
+                0 → Inserts at the beginning.
+                -1 or omitted → Inserts at the end.
+        */
+
+        let newRow = table.insertRow(-1); // Default is -1 (end of the table)
+        // let newRow = table.insertRow(2); // Give specific indewx
+        newRow.innerHTML = "<td>103</td><td>Clark Kent</td><td>AI & ML</td>";
+        // newRow.insertCell(0).textContent = 'New ID';
+        console.log(newRow);
+
+        /*
+        .deleteRow() Explanation
+            Removes a row (<tr>) from a table, <thead>, <tbody>, or <tfoot>.
+            If the specified row index doesn’t exist, it throws an error.
+            Syntax: tableElement.deleteRow(index);
+                index → The row position to be removed.
+                0 → Deletes the first row.
+                -1 → (Not valid), must provide a valid index.
+                Throws an error if the index is out of range.
+        */
+
+        // table.deleteRow(-1);
+
+        table.deleteRow(3); // Give specific indewx
+
+
+
+
+
+
+
+
+         
+         
+       
+    </script>
+       
+</body>
+
+</html>

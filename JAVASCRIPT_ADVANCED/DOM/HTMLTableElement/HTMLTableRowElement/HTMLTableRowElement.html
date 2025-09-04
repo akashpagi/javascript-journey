@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins';
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #sub-span {
+            color: #e60659;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #f71854fc;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Table CSS */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 3px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th, tfoot {
+            background-color: #e3e0e0;
+            font-weight: bold;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 3px;
+            color: #019f9c;
+        }
+      </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">HTML Element Interface :</span> HTMLTableRowElement (Properties & Methods) </h3>
+    <div>
+        <table id="mytable" >
+            <caption>My Table Caption</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mentor</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="myTableBody">
+                <tr>
+                    <td>101</td>
+                    <td>John Wick</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Clark Kent</td>
+                    <td>Machine Learning</td>
+                </tr>
+            </tbody>
+            <!-- <tbody></tbody> -->
+            <tfoot>
+                <tr>
+                    <td colspan="2"> Total Course </td>
+                    <td>2</td> 
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        // HTMLTableRowElement Property
+        let table = document.getElementById('mytable');
+        let allRows = mytable.rows;
+        // console.log(allRows);
+
+        // // cells (index start form 0) length
+        // console.log(allRows[0].cells.length);
+
+        // // Access indiviual cells
+        // console.log(allRows[0].cells[0]);
+        // console.log(allRows[0].cells[1]);
+        // console.log(allRows[0].cells[2]);
+        // console.log(allRows[1].cells[0]);
+        // console.log(allRows[1].cells[1]);
+        // console.log(allRows[1].cells[2]);
+        // console.log(allRows[2].cells[1]);
+        // console.log(allRows[3].cells[0]);
+
+        // // Access row cells using item(index)
+        // console.log(allRows[0].cells.item(0));
+        // console.log(allRows[1].cells.item(1));
+        // console.log(allRows[2].cells.item(2));
+        // console.log(allRows[3].cells.item(1));
+
+        // // Access using inner HTML
+        // console.log(allRows[3].cells[0].innerHTML);
+          
+        // // Replace text or Assign the text
+        // allRows[3].cells[0].innerHTML = 'New Total Course';
+
+        // rowIndex 
+        console.log(allRows[0].rowIndex); // Output: 0 (Header row)
+        console.log(allRows[1].rowIndex); // Output: 1 (First row in tbody)
+        console.log(allRows[2].rowIndex); // Output: 2 (Second row in tbody)
+        console.log(allRows[3].rowIndex); // Output: 3 (Footer row)
+
+
+
+        // sectionRowIndex 
+        let tbody = document.getElementById('myTableBody');
+        let tbodyRows = tbody.rows;
+        console.log(tbodyRows[0].sectionRowIndex); // Output: 0 (First row inside tbody)
+        console.log(tbodyRows[1].sectionRowIndex); // Output: 1 (Second row inside tbody)
+            
+        // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // HTMLTableRowElement Method
+
+        inserCell()
+        let newCell = allRows[0].insertCell(3);
+        let newCell1 = allRows[1].insertCell(3);
+        let newCell2 = allRows[2].insertCell(3);
+        newCell.innerHTML = 'Duration';
+        newCell1.innerHTML = '3 Months';
+        newCell2.innerHTML = '5 Months';
+        console.log(newCell);
+
+        // deleteCell()
+        allRows[0].deleteCell(0)
+    </script>
+</body>
+
+</html>

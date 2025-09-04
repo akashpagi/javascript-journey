@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">APPEND NODES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="node_style.css">
+</head>
+<body>
+    <!-- Parent 1 -->
+    <div id="my-div">
+        <h3 id="myheading">normalize() method</h3>
+    </div>
+
+    <!-- Parent 2 -->
+    <section id="my-section">
+        <p> This is p Tag !</p>
+    </section>
+
+    <div id="my-div-1"></div> 
+
+    <h4> Programming Languages, Library & Framework</h4>
+    <ul id="myul">
+        <li>Python</li>
+        <li id="dj">Django</li>
+        <li>NumPy</li>
+        <li id="sql">MySQL</li>
+    </ul>
+
+    <ul id="myul-1">
+        <li id="gh">GitHub</li> 
+        <li id="drf">Django Rest Framework</li>
+        <li id="gb">Git Bash</li>
+    </ul>
+
+    <script>
+        // console.log("----- Normalize() Method -----");
+        // /* merge adjacent text nodes into a single text node within an element. 
+        //    It ensures the structure of the DOM is consistent and helps clean up unnecessary text nodes, such as those created unintentionally during DOM manipulations.
+        // */ 
+
+        // let targetNode = document.getElementById("my-div-1");
+
+        // // Append multiple text nodes
+        // targetNode.appendChild(document.createTextNode("This "));
+        // targetNode.appendChild(document.createTextNode("is "));
+        // targetNode.appendChild(document.createTextNode("Text "));
+        // targetNode.appendChild(document.createTextNode("Node !")); 
+
+        // // Log before normalization
+        // console.log("Before normalize:", targetNode.childNodes);
+
+        // // Normalize the target node
+        // targetNode.normalize();
+
+        // // Log after normalization
+        // console.log("After normalize:", targetNode.childNodes);
+
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // console.log(`---- insertBefore() method ----`);
+
+        // // Creating Element Node h4
+        // let newNode = document.createElement("li");
+
+        // // Creating text Node
+        // let newTextNode = document.createTextNode('JavaScript');
+
+        // // Creating empty DocumentFragment
+        // let df = document.createDocumentFragment();
+
+        // // parentNode
+        // let parentNode = document.getElementById("myul")
+
+        // // Referencing Node
+        // let referenceNode = document.getElementById("dj")
+
+        // // Append using new to Document Fragment
+        // df.appendChild(newNode);
+        // newNode.appendChild(newTextNode);
+
+        // // // Insert new element
+        // // parentNode.insertBefore(newNode, referenceNode);
+
+        // // Insert new element with null
+        // // newNode append at the end 
+        // parentNode.insertBefore(newNode, null);
+
+        // console.log(parentNode);
+
+        // ++++++++++++++++++++++++++++++++++++++
+
+        // // Move existing Node
+        // let parentNode = document.getElementById("myul");
+        // let moveNode = document.getElementById('sql');
+        // let existingNode = document.getElementById('dj');
+
+        // parentNode.insertBefore(moveNode, existingNode);
+        // console.log(parentNode);
+
+        // // ++++++++++++++++++++++++++++++++++++++
+
+        // // Insert the Text Node
+        // let parentNode = document.getElementById("myul");
+        // let textNode = document.createTextNode('This is text node !');
+        // let existingNode = document.getElementById('dj');
+
+        // parentNode.insertBefore(textNode, existingNode);
+        // console.log(parentNode);
+
+        // ++++++++++++++++++++++++++++++++++++++
+
+        // // Move existing Node to another parent Node
+        // let parentNode = document.getElementById("myul");
+        // let moveNode = document.getElementById('drf');
+        // let existingNode = document.getElementById('dj');
+
+        // parentNode.insertBefore(moveNode, existingNode);
+        // console.log(parentNode);
+        
+        // // // ++++++++++++++++++++++++++++++++++++++
+
+        // console.log(`---- insertAdjacentElement() method ----`);
+        // // element.insertAdjacentElement(position, newElement)
+
+
+        // // parentNode
+        // let parentNode = document.getElementById("myul-1");
+        // // console.log(parentNode);
+
+        // let drfNode = document.getElementById("drf");
+        // let newElement = document.createElement("li");
+        // newElement.textContent = 'Machine Learning';
+
+        // // insertAdjancentElement
+        // // drfNode.insertAdjacentElement('beforebegin', newElement);
+        // // drfNode.insertAdjacentElement('afterbegin', newElement);
+        // // drfNode.insertAdjacentElement('beforeend', newElement);
+        // drfNode.insertAdjacentElement('afterend', newElement);
+        // console.log(parentNode);
+
+    //    // // ++++++++++++++++++++++++++++++++++++++
+
+    //    console.log(`---- insertAdjacentHTML() method ----`);
+    //    // element.insertAdjacentHTML(position, text)
+
+    //     // parentNode
+    //     let parentNode = document.getElementById("myul-1");
+    //     // console.log(parentNode);
+
+    //     let drfNode = document.getElementById("drf");
+    //     let myHTML ='<li>insertAdjacentHTML</li>';
+       
+    //     // insertAdjancentHTML
+    //     // drfNode.insertAdjacentHTML('beforebegin', myHTML);
+    //     // drfNode.insertAdjacentHTML('afterbegin', myHTML);
+    //     // drfNode.insertAdjacentHTML('beforeend', myHTML);
+    //     drfNode.insertAdjacentHTML('afterend', myHTML);
+    //     console.log(parentNode);
+
+
+           // // ++++++++++++++++++++++++++++++++++++++
+
+    //     console.log(`---- insertAdjacentText() method ----`);
+    //    // element.insertAdjacentText(position, text)
+
+    //     // parentNode
+    //     let parentNode = document.getElementById("myul-1");
+    //     // console.log(parentNode);
+
+    //     let targetNode = document.getElementById("drf");
+    //     let myText ='This is Text';
+       
+    //     // insertAdjancentText
+    //     // targetNode.insertAdjacentText('beforebegin', myText); 
+    //     // targetNode.insertAdjacentText('afterbegin', myText); 
+    //     // targetNode.insertAdjacentText('beforeend', myText); 
+    //     targetNode.insertAdjacentText('afterend', myText); 
+    //     console.log(parentNode);
+    //     // console.log(parentNode.childNodes);
+     
+    </script>
+</body>
+</html>
+

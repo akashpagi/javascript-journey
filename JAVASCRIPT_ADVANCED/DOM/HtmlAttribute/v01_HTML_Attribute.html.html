@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">Element Interface</span> manipulating attributes</h3>
+    <p id="para" title="para-title" class="myclass">Paragraph</p>
+    <p id="para" title="para-title" class="myclass" style="background-color: rgb(140, 238, 191);">Paragraph</p>
+    <script>
+        // setAttribute() 
+        // Syntax: element.setAttribute(name, value);
+        let element = document.getElementById("para");
+
+        // Modify existing attribute ('class') using setAttribute()
+        element.setAttribute('class', 'para-class'); 
+
+        // Alternative for setAttribute() (modifies class directly)
+        // element.className = 'new_para_class'; 
+
+        // Add a new attribute (e.g., 'lang') or modify an existing one
+        // element.setAttribute('lang', 'en'); // add new attribute
+
+        // Modify the inline style using the style property (recommended)
+        element.style.backgroundColor = "rgb(238, 140, 188)"; // Change background color
+        console.log(element);
+
+        // getAttribute()
+        // Syntax: element.getAttribute(attributeName);
+        let getAttr = element.getAttribute('title');
+        console.log(getAttr); // Get the value of the 'title' attribute
+        // Alternative for getAttribute() (accesses the 'title' directly)
+        console.log(element.title); // Access the 'title' attribute directly
+
+        // removeAttribute() 
+        // Syntax: element.removeAttribute(attributeName);
+        element.removeAttribute('title'); // Remove the 'title' attribute from the element
+        console.log(element); // Check the element after removing the 'title' attribute
+
+        // hasAttribute() 
+        // Syntax: element.hasAttribute(attributeName);
+        let hasAttrs = element.hasAttribute('title'); // Check if the element still has the 'title' attribute
+        console.log(hasAttrs); // Logs 'false' because the 'title' attribute was removed
+    </script>
+</body>
+
+</html>

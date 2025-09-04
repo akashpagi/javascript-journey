@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" id="main">
+    <head id="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title">DOM Traversal</title>
+        <!-- Google Fonts Link for Poppins -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- External CSS -->
+        <link rel="stylesheet" href="Node/node_style.css">
+    </head>
+    <body id="mybody">
+        <!-- Heading Section -->
+        <h3 id="myheading">
+            <!-- This is comment in h3 tag --> 
+            <span>DOM Traversal</span>
+            <em>This is Em</em>
+        </h3>
+        
+        <!-- Paragraph Section -->
+        <!-- <p id="para">
+            DOM Traversal refers to navigating through the nodes of a DOM tree.
+        </p> -->
+
+        <!-- Outer Div Container 
+        <div id="outer-div"> 
+
+            <h4>This is outer-div !</h4> 
+            <div id="inner-div">
+
+                <h4>This is inner-div !</h4>
+                <div id="div-1">This is DIV-1</div>
+                <div id="div-2">This is DIV-2</div>
+                <div id="div-3">This is DIV-3</div>
+            </div>
+        </div> -->
+
+        <!-- ============================================================== -->
+
+        <!-- Paragraph Section -->
+        <p id="para1">
+            DOM Traversal refers to navigating through the nodes of a DOM tree.
+        </p>
+
+        <p id="para2">
+            <span>I am span</span>
+            DOM Traversal refers to navigating through the nodes of a DOM tree.
+        </p>
+
+        <div id="output"></div>
+
+        <!-- DOM Node Object Properties -->
+        <script>
+            console.log(`DOM Traversal`);
+
+            console.log(`----- nextSibling & nextElementSibling ----`);
+
+            let get_parent = document.getElementById("myheading");
+
+            console.log("Specified node :", get_parent.firstChild);
+            console.log("Getting nextSibiling of specified node :", get_parent.firstChild.nextSibling); // 
+
+            console.log("current lastChild in parent childNode's list:", get_parent.lastChild); 
+            console.log("Getting nextSibiling of lastChild in parent childNode's list:", get_parent.lastChild.nextSibling); // null
+
+
+            console.log("current lastElementChild in parent childNode's list::", get_parent.lastElementChild); // lastElement is em
+            console.log("Getting nextElementSibiling of parent childNode's list:", get_parent.firstChild.nextElementSibling); //  <span>DOM Traversal</span>
+            console.log("Getting nextElementSibiling of parent childNode's list:", get_parent.lastChild.nextElementSibling); // null
+            console.log("Getting nextElementSibiling of parent childNode's list:", get_parent.firstElementChild.nextElementSibling); // <em>This is Em</em> 
+            
+            // // Try to manipulation in nextElementSibling
+            let next_sibling = get_parent.firstChild.nextElementSibling;
+            next_sibling.textContent= 'This is manipulated nextElementSibling';
+            console.log("Updated nextElementSibling:", next_sibling);
+
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            // console.log(`----- perviousSibling &  previousElementSibling ----`);
+
+            // let get_parent = document.getElementById("myheading");
+
+            // console.log("firstChild:", get_parent.firstChild);
+            // console.log("Getting previousSibiling of firstChild:", get_parent.firstChild.previousSibling); // if child is first then return null
+            
+            // console.log("current lastChild of parent node:", get_parent.lastChild); 
+            // console.log("Getting previousSibiling of lastChild:", get_parent.lastChild.previousElementSibling); // Ignore the #text etc
+            
+
+            // console.log("current lastElementChild of parent node:", get_parent.lastElementChild); // lastElement is em
+            // // console.log("Getting previousSibiling of lastElementChild:", get_parent.lastElementChild.previousElementSibling); // Ignore the #text etc
+            
+
+            // // Try to manipulation in previousElementSibling
+            // let previousEleSibling = get_parent.lastElementChild.previousElementSibling;
+            // previousEleSibling.innerHTML = 'This is manipulated previousElementSibling <br>';
+            // console.log("Updated previousSibling:", previousEleSibling);
+
+
+            // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            // console.log(`----- lastChild & lastElementChild ----`);
+
+            // // let get_last_child= document.getElementById("mybody");
+            // let get_last_child = document.getElementById("myheading");
+
+            // // // lastChild and latElementChild
+            // console.log("last Child Node:", get_last_child.lastChild);
+            // console.log("last Element Child:", get_last_child.lastElementChild);
+
+            // let output = document.getElementById("output");
+            // output.innerHTML = `
+            //     <p>Last Child Node: ${get_last_child.lastChild.nodeName}</p>
+            //     <p>Last Element Child: ${get_last_child.lastElementChild.nodeName}</p>
+            // `;
+            
+            // // // // modified firstChild
+            // // get_last_child.lastChild.textContent = "This is New last child";
+
+            // // // modified firstElementChild
+            // get_last_child.lastElementChild.textContent = "This is lastElementChild";
+
+        
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+            // console.log(`----- firstChild & firstElementChild ----`);
+
+            // // Access the element with ID "myheading"
+            // let get_first_child = document.getElementById("myheading");
+
+            // // Log firstChild and firstElementChild
+            // console.log("First Child Node:", get_first_child.firstChild);
+            // console.log("First Element Child:", get_first_child.firstElementChild);
+
+
+            // let output = document.getElementById("output");
+            // output.innerHTML = `
+            //     <p>First Child Node: ${get_first_child.firstChild.nodeName}</p>
+            //     <p>First Element Child: ${get_first_child.firstElementChild.nodeName}</p>
+            // `;
+            
+            // // modified firstChild
+            // get_first_child.firstChild.textContent = "This is New Heading";
+
+            // // modified firstElementChild
+            // get_first_child.firstElementChild.textContent = "This is firstElementChild";
+
+
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            // console.log(`----- ParentNode & ParentElement ----`);
+            // // Access the element with ID's
+            // // let get_parent = document.getElementById("outer-div");
+            // //  let get_parent = document.getElementById("outer-div");
+            // let get_parent = document.getElementById("inner-div");
+            // // let get_parent = document.getElementById("myheading");
+
+            // // Modify the background color of the selected element
+            // let modifed_parent = get_parent.style.background = "#e5acf9";
+
+            // // Accessing parentNode and parentElement of the selected element
+            // console.log(get_parent.parentNode); // Logs the parent node
+            // console.log(get_parent.parentElement); // Logs the parent element
+
+            // // Accessing parentNode and parentElement for the document object
+            // console.log("Parent Node of document:", document.parentNode); // null
+            // console.log("Parent Element of document:", document.parentElement); // null
+
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            // console.log(`----- childNode & Children ----`);
+
+            // // Access the element with ID "myheading"
+            // // let get_child = document.getElementById("mybody");
+            // // let get_child = document.getElementById("myheading");
+            // let get_child = document.getElementById("para2"); // show only span 
+
+
+            // // Logs the childNodes (includes text, comment, and element nodes)
+            // console.log(get_child.childNodes);
+            // console.log(get_child.children); 
+
+            // // Length property
+            // let get_node = document.getElementById("para2");
+            // let outputElement = document.getElementById("output");
+
+            // let len = get_node.childNodes.length;
+
+            // console.log(get_node.childNodes);
+            // console.log(`Length of the childNode : ${len}`);
+            // console.log(get_node.children);
+
+            // // Access using index
+            // console.log(get_node.childNodes[0]);
+            // console.log(get_node.childNodes[1]);
+            // console.log(get_node.childNodes[2]);
+
+            // console.log(get_node.children[0]);
+
+            // // Loop through childNodes and log each node
+            // console.log(`----- Loop through childNodes -----`)
+            // for (let i = 0; i < get_child.childNodes.length; i++) {
+            //     console.log(`Node ${i}:`, get_child.childNodes[i]);
+            // }
+
+            // console.log(`----- Loop through children -----`)
+            // for (let i = 0; i < get_child.children.length; i++) {
+            //     console.log(`Node ${i}:`, get_child.children[i]);
+            //     // document.write(get_child.children[i].textContent);
+            //     outputElement.innerHTML += `<p>${get_child.children[i].textContent}</p>`;
+            // }
+            
+            // // Modifed
+            // let modified_value = get_node.childNodes[1].textContent = 'I am New span tag !';
+            // console.log(modified_value);
+
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+        </script>
+    </body>
+</html>

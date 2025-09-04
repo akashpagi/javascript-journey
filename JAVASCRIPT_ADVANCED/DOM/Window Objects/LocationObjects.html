@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINDOW OBJECTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">WINDOW OBJECTS: </span> Location Object</h3>
+    <div id="output"></div>
+
+    <script>
+        // // Location Object : Properties 
+        // console.log(`Port: ${window.location.protocol}`)
+        // console.log(`Host: ${window.location.host}`)
+        // console.log(`Hostname: ${window.location.hostname}`)
+        // console.log(`Pathname: ${window.location.pathname}`)
+        // console.log(`Search: ${window.location.search}`)
+        // console.log(`href: ${window.location.href}`)
+
+        // // let hashResult;
+        // // window.location.hash = `#newTeam`; // set the hash in url
+        // // // console.log(`Hash: ${window.location.hash}`) // make sure live server while running
+        // // console.log('Hash:', hashResult);
+
+        // Location Object : Methods
+        // window.location.reload();
+        // window.location.assign('https://www.google.com');
+        window.location.repalce('https://www.google.com');
+    </script>
+</body>
+</html>

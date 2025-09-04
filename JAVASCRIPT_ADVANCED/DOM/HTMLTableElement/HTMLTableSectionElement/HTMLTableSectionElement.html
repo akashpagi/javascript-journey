@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins';
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #sub-span {
+            color: #e60659;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #f71854fc;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Table CSS */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 3px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th, tfoot {
+            background-color: #e3e0e0;
+            font-weight: bold;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 3px;
+            color: #019f9c;
+        }
+  
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">HTML Element Interface :</span> HTMLTableSectionElement (Properties & Methods) </h3>
+    <div>
+        <table id="mytable" >
+            <caption>My Table Caption</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mentor</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="myTableBody">
+                <tr>
+                    <td>101</td>
+                    <td>John Wick</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Clark Kent</td>
+                    <td>Machine Learning</td>
+                </tr>
+            </tbody>
+            <!-- <tbody></tbody> -->
+            <tfoot>
+                <tr>
+                    <td colspan="2"> Total Course </td>
+                    <td>2</td> 
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        // HTMLTableSectionElement Property
+        let tableSection = document.getElementById('myTableBody');
+
+        // /* rows property */
+
+        // let allRows = tableSection.rows;
+        // console.log(allRows); // Return HTMLCollection of rows in table body
+        // console.log(allRows[0]);
+        // console.log(allRows[1]);
+
+        // // console.log(allRows[0].innerHTML);
+        // // console.log(allRows[1].innerHTML);
+
+        // // Replace the row with index position dynamically
+        // allRows[0].innerHTML = "<td>101</td><td>Clark Kent</td><td>GEN AI</td>";
+
+        // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // HTMLTableSectionElement Method
+
+        // // insertRow()
+        // let newRow = tableSection.insertRow(-1); // Default is -1 (end of the table)
+        // // let newRow = table.insertRow(2); // Give specific indewx
+        // newRow.innerHTML = "<td>103</td><td>John Wick</td><td>Karate</td>";
+        // // newRow.insertCell(0).textContent = 'New ID';
+        // console.log(newRow);
+
+        // deleteRow()
+        tableSection.deleteRow(-1);
+        // tableSection.deleteRow(1);
+    </script>
+</body>
+
+</html>

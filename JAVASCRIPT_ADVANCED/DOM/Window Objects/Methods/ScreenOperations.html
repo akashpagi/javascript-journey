@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINDOW OBJECTS: Screen Operations</Dialog></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .button {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #c3c5c7;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #3a274bdc;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.25rem;
+            padding: 12px 16px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #cfcfcf;
+        }
+
+        .button:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">Window Objects: </span>Screen Operations</h3>
+
+    <h4>
+        Moving windows : moveTo(x,y) & moveBy(x,y) <br>
+        Resizing windows : resizeTo(width, height) & resizeBy(width, height) <br>
+        Scrolling windows : scrollTo(x,y) & scrollBy(x,y) <br>
+    </h4>
+    
+ 
+    <button id="openBtn" class="button">Open</button>
+    <button id="moveTo" class="button">MoveTo</button>
+    <button id="moveBy" class="button">MoveBy</button>
+    <button id="resizeTo" class="button">ResizeTo</button>
+    <button id="resizeBy" class="button">ResizeBy</button>
+    <button id="scrollTo" class="button">ScrollTo</button>
+    <button id="scrollBy" class="button">ScrollBy</button>
+
+    <script>
+        console.log(`Window Object: Screen Operations Methods`);
+
+        let openBtn = document.getElementById("openBtn"); 
+        let moveToBtn = document.getElementById("moveTo"); 
+        let moveByBtn = document.getElementById("moveBy"); 
+        let resizeToBtn = document.getElementById("resizeTo"); 
+        let resizeByBtn = document.getElementById("resizeBy"); 
+        let scrollToBtn = document.getElementById("scrollTo");
+        let scrollByBtn = document.getElementById("scrollBy");
+
+        let newWin;
+
+        let openWinFun = () => {
+            newWin = window.open("", 'newWin', "width=300, height=200, scrollbars=yes");
+            if (newWin) {
+                newWin.document.write("<h3>This is a new window with scrollable content!</h3>");
+                newWin.document.write("<div style='height: 1000px; background: linear-gradient(#f4f4f4, #aaa);'></div>");
+            } else {
+                alert('Popup blocked! Allow popups for this site.');
+            }
+        }
+
+        let moveToFun = () => {
+            newWin.moveTo(200, 200);
+            newWin.focus();
+        }
+
+        let moveByFun = () => {
+            newWin.moveBy(100, 200);
+            newWin.focus();
+        }
+
+        let resizeToFun = () => {
+            newWin.resizeTo(400, 400);
+            newWin.focus();
+        }
+
+        let resizeByFun = () => {
+            newWin.resizeBy(50, 50);
+            newWin.focus();
+        }
+
+        let scrollToFun = () => {
+            // newWin.scrollTo(0, 0); // top
+            newWin.scrollTo({top: 0, behaviour:'smooth'});
+            newWin.focus();
+        }
+
+        let scrollByFun = () => {
+            // newWin.scrollBy(0, 100); // Scrolls 100px down relative to current position
+            newWin.scrollBy(0, -100); // for upwards
+            // newWin.scrollBy({top: 100, behaviour:'smooth'});
+            newWin.focus();
+        }
+
+        openBtn.addEventListener('click', openWinFun);
+        moveToBtn.addEventListener('click', moveToFun);
+        moveByBtn.addEventListener('click', moveByFun);
+        resizeToBtn.addEventListener('click', resizeToFun);
+        resizeByBtn.addEventListener('click', resizeByFun);
+        scrollToBtn.addEventListener('click', scrollToFun);
+        scrollByBtn.addEventListener('click', scrollByFun);
+
+    </script>
+</body>
+</html>

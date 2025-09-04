@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>WINDOW OBJECTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">WINDOW OBJECTS: </span>Window Object</h3>
+    <div id="dimensions"></div>
+
+    <script>
+
+        window.onload = function () {
+            console.log("Page Loaded - First Handler");
+        };
+
+        window.onload = function () {
+            console.log("Page Loaded - Second Handler"); // This will override the first handler.
+        };
+
+        // window.addEventListener("load", function () {
+        //     console.log("Page Loaded - First Handler");
+        // });
+
+        // window.addEventListener("load", function () {
+        //     console.log("Page Loaded - Second Handler"); // Both handlers work.
+        // });
+
+
+
+    </script>
+       
+</body>
+</html>

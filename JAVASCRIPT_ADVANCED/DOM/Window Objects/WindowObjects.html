@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>WINDOW OBJECTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">WINDOW OBJECTS</span></h3>
+
+    <h4>Window Object Dimensions</h4>
+
+    <p>outerHeight & outerWidth include everything (toolbar, address bar, scrollbar, etc.). <br>
+    innerHeight & innerWidth are just the viewport dimensions (excluding browser UI).</p>
+    </p>The values change when you resize the window.</p>
+    
+    <div id="dimensions"></div>
+
+    <button type="button" id="btn" class="button">print</button>
+
+    <script>
+        // console.log(`Window Object Dimensions`);
+
+        // let outerHeight = window.outerHeight;
+        // let outerWidth = window.outerWidth;
+       
+        // console.log(`outerHeight: ${outerHeight}, outerWidth: ${outerWidth}`);
+
+        // let innerHeight = window.innerHeight;
+        // let innerWidth = window.innerWidth;
+        // console.log(`innerHeight: ${innerHeight}, innerWidth: ${innerWidth}`);
+
+        // // Diplay the on the web page
+        // document.getElementById("dimensions").innerHTML = `
+        //     <strong>Outer dimensions of window: </strong> 
+        //     outerHeight: ${outerHeight}px, outerWidth: ${outerWidth}px
+        //     <br> <br>
+        //     <strong>Inner dimensions of window: </strong>
+        //     innerHeight: ${innerHeight}px, innerWidth: ${innerWidth}px
+        // `
+
+        // ++++++++++++++++++++++++++++++++++++++++++
+
+        // window.print() method 
+
+        function printDoc(){
+            window.print();
+        }
+
+        document.getElementById('btn').addEventListener('click', printDoc);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+       
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSStyleDecleration Object</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">CSSStyleDeclaration</span> Object ,<span id="sub-span"> DOMTokenList</span></h3>
+    <p id="para1" class="para-class-1" title="para-title-1" style="background-color: rgb(193, 168, 249); font-size: 20px;">Paragraph 1</p>
+    <p id="para2" class="para-class-2" title="para-title-2" >Paragraph 2</p>
+    <p id="para3" class="para-class-3 test-class" style="background-color: rgb(249, 227, 168);">Paragraph 3</p>
+    <!-- Example inline style for 'para2': style="background-color: rgb(140, 238, 191);" -->
+    <script>
+        // // CSSStyleDeclaration Object Example
+
+        // // Accessing the paragraph element with the ID 'para1'
+        // let pElement = document.getElementById("para1");
+        // let pElement1 = document.getElementById("para2");
+
+        // // Logging the CSSStyleDeclaration object of 'para1' to the console
+        // console.log(pElement.style);
+
+        // // Example of getting a specific inline style property
+        // // Uncomment the lines below to retrieve the background color value of 'para1'
+        // // let bg = pElement.style.backgroundColor;
+        // // console.log(bg); // Logs the inline 'background-color' value
+
+        // // Setting a new background color for 'para1'
+        // // Uncomment the line below to change the background color of 'para1'
+        // pElement.style.backgroundColor = 'rgb(140, 238, 191)';
+        // // Logging the updated 'para1' element to verify the style change
+        // console.log(pElement);
+
+        // // Adding a new style property to 'para2'
+        // pElement1.style.fontWeight = "800"; // Sets the font weight of 'para2' to bold
+        // console.log(pElement1); // Logs the updated 'para2' element
+
+        // // Note: When adding new style properties, avoid using setAttribute() as it may override existing inline styles
+
+        // // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // // Dynamic Style Manipulation Example
+
+        // let p = document.getElementById("para3");
+        // p.className = 'para-class-2';
+
+        // console.log(p);
+
+
+        // // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // // classList Property
+        // let p = document.getElementById("para3");
+        // let elementClass = p.classList;
+        // console.log(elementClass);
+
+        // // Try to access using index
+        // console.log(elementClass[0]);
+        // console.log(elementClass[1]);
+
+        // // Properties
+        // console.log('Length:', elementClass.length);
+        // console.log('Values:', elementClass.value);
+
+        // // Methods in classList
+
+        // // // add()
+        // // elementClass.add('test-class-1', 'test-class-2');
+
+        // // // remove()
+        // // elementClass.remove('test-class-1','test-class-2');
+        // // console.log(elementClass);
+        
+        // // // replace()
+        // // elementClass.replace('para-class-3','myclass-3');
+        // // console.log(elementClass);
+
+        // // // contains()
+        // // // Return booleans value
+        // // let classHas = elementClass.contains('para-class-6');
+        // // console.log(classHas);
+
+        // // // toggle()
+        // // // if exixts then remove, if not then add
+        // // elementClass.toggle('para-class-3');
+        // // // elementClass.toggle('para-class-3');
+        // // console.log(elementClass);
+
+        // // item(index)
+        // let className = elementClass.item(1);
+        // console.log('item at index 1:', className);
+
+        // // // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // //  CSSStyleDeclaration Object Properties and Methods
+        // // let p = document.getElementById("para1");
+        
+        // // // Return collection inline style that are used in element
+        // // let CSSStyleDeclarationObject = p.style;
+        // // console.log(CSSStyleDeclarationObject);
+
+        // // Propertieds of CSSStyleDeclaration Object
+
+        // // // cssText : Gets of Sets the entire inline CSS as single string
+        // // let ct = p.style.cssText;
+        // // console.log(ct); // Gets the  css property
+        // // p.style.cssText = "color: #ffffff; background-color: #000000;"; // Sets the Multile css properties
+        // // console.log(p.style.cssText);
+
+        // // // length : Returns the number of CSS properties set.
+        // // let c = p.style;
+        // // console.log(c.length);
+        
+        // // parentRule
+
+
+        // // // Methods
+
+        // // Select the element
+        // let p = document.getElementById("para1");
+        // let s = p.style;
+
+        // // item(index) - Returns the name of the CSS property at the given index
+        // console.log(s.item(0)); // Logs the first CSS property name
+        // console.log(s.item(1)); // Logs the second CSS property name
+
+        // // getPropertyValue() - Gets the value of the specified CSS property
+        // let getProValue = s.getPropertyValue('background-color');
+        // console.log('property value:', getProValue); // Logs the background color value
+
+        // // removeProperty() - Removes the specified CSS property
+        // s.removeProperty('font-size');
+        // console.log(s); // Logs the style object after removing the 'font-size' property
+
+        // // setProperty(prop, val, priority) - Sets the specified CSS property with optional priority
+        // s.setProperty('font-size', '30px');
+        // console.log('set property:', p); // Logs the updated paragraph element
+
+        // // getPropertyPriority() - Returns the priority of the CSS property
+        // let getProPrio = s.getPropertyPriority('font-size');
+        // console.log(getProPrio); // Logs the priority of 'font-size' (either '' or 'important')
+        
+        // // // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // Computaed Style and getComputedStyle() methods
+
+        let p = document.getElementById("para1");
+
+        // Read computed styles
+        let allCSSPro = window.getComputedStyle(p);
+        console.log(allCSSPro.fontSize);   // Outputs: "20px"
+        console.log(allCSSPro.fontFamily); // Outputs: "Arial, sans-serif"
+        console.log(allCSSPro.color);      // Outputs: "rgb(0, 0, 255)" (computed color)
+                
+
+
+            
+    </script>
+</body> 
+
+</html>

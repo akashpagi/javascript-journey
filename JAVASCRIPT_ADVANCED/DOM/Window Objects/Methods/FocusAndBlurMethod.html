@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINDOW OBJECTS: Focus & Blur Methods</Dialog></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .button {
+            margin: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #c3c5c7;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #3a274bdc;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.25rem;
+            padding: 12px 16px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+           
+        }
+
+        .button:hover {
+            background-color: #cfcfcf;
+        }
+
+        .button:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">Window Objects: </span>Opening & Closing Windows Methods</h3>
+
+    <h4>Focus() And Blur()</h4>
+    <button id="btn" class="button">Create New Window</button>
+    <button id="btn2" class="button">Close Window</button>
+    <button id="focusBtn" class="button">Focus</button>
+    <button id="blurBtn" class="button">Blur</button>
+
+    <script>
+        console.log(`Window Object: Opening & Closing Windows Methods`);
+
+        let newWin; // Declare newWin globally
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let openBtn = document.getElementById("btn"); // Button to open the new window
+            let closeBtn = document.getElementById("btn2"); // Button to close the new window
+            let focusBtn = document.getElementById("focusBtn"); 
+            let blurBtn = document.getElementById("blurBtn"); 
+
+            if (openBtn) {
+                openBtn.addEventListener("click", () => {
+                    newWin = window.open("", "_blank", "height=400,width=500,scrollbars=no");
+                    if (!newWin) {
+                        console.log("Popup blocked by browser.");
+                    }
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => {
+                    if (newWin && !newWin.closed) {
+                        newWin.close();
+                    } else {
+                        console.log("Window is already closed or was blocked.");
+                    }
+                });
+            }
+
+            if (focusBtn) {
+                focusBtn.addEventListener("click", () => {
+                    if (newWin && !newWin.closed) {
+                        newWin.focus();
+                    } else {
+                        console.log("No active window to focus.");
+                    }
+                });
+            }
+
+            if (blurBtn) {
+                blurBtn.addEventListener("click", () => {
+                    if (newWin && !newWin.closed) { //  ensure that the newWin window object exists and is still open before trying to interact with it.
+                        newWin.blur();
+                    } else {
+                        console.log("No active window to blur.");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html> 

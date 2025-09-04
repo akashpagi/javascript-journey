@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins';
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        /* for id */
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #sub-span {
+            color: #e60659;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #f71854fc;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Table CSS */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 3px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th, tfoot {
+            background-color: #e3e0e0;
+            font-weight: bold;
+        }
+
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 3px;
+            color: #019f9c;
+        }
+  
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">HTML Element Interface :</span> HTMLTableElement (Properties) </h3>
+    <div>
+        <table id="mytable" >
+            <caption>My Table Caption</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mentor</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>John Wick</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>James Bond</td>
+                    <td>JavaScript</td>
+                </tr>
+            </tbody>
+            <!-- <tbody></tbody> -->
+            <tfoot>
+                <tr>
+                    <td colspan="2"> Total Course </td>
+                    <td>2</td> 
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        let table = document.getElementById('mytable');
+        // caption
+        let tableCaption = table.caption;
+        tableCaption.innerHTML = 'This is latest caption';  
+        console.log(tableCaption);
+
+        // tHead
+        let tableHead = table.tHead;
+        tableHead.innerHTML = "<tr><th>New ID</th><th>New Mentor</th><th>New Course</th></tr>";
+        console.log(tableHead);
+
+        // tFoot
+        let tableFoot = table.tFoot;
+        tableFoot.innerHTML = "<tr><td colspan='2'>Total New Course </td><td>3</td></tr>";
+        console.log(tableFoot);
+
+        // tBodies
+        let tableBodies = table.tBodies;
+        console.log(tableBodies);
+        // console.log(tableBodies[0]);
+
+        // rows
+        let allRows = table.rows;
+        console.log(allRows); // Logs all <tr> elements
+        console.log(allRows.length);
+
+        // // Loop through all rows and log their content
+        // for (let row of allRows) {
+        //     console.log(row.innerHTML);
+        // }
+
+        // Get the current border attribute
+        console.log(table.border); 
+
+        // Set a new border (only works if border is set via the HTML attribute)
+        table.border = "3"; 
+        console.log(table.border); 
+       
+    </script>
+       
+</body>
+
+</html>

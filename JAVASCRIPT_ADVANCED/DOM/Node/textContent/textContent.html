@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node: textContent property</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins';
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #sub-span {
+            color: #e60659;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #f71854fc;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        #para{
+            color: #25252afc;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">Node:</span> textContent property </h3>
+    <p id="para">Node interface represents the text content of the node and its descendants.</p>
+
+    <h3 id="myheading"><span id="sub-span">Differences between </span> textContent vs innerHTML </h3>
+    <p id="para1"></p>
+    
+    <script>
+        // let myNode = document.getElementById('para');
+        // // console.log(myNode.textContent); 
+        // // console.log(myNode); 
+
+
+        // // // Replace the value
+        // myNode.textContent = 'This is new paragraph !';
+        // console.log(myNode.textContent); 
+        // console.log(myNode); 
+
+
+        // textContent vs innerHTML
+        let p = document.getElementById('para1');
+        p.textContent = 'This is new paragraph using textContent !';
+        // p.textContent = '<b>This is new paragraph using textContent !</b>'; // note able to apply HTML tags
+        
+        p.innerHTML = '<b>This is new paragraph using innerHTML !</b>';
+        console.log(p.textContent); 
+
+
+       
+    </script>
+       
+</body>
+
+</html>

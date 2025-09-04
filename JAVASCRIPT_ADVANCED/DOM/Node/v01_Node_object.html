@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Tree : Node Object</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="node_style.css">
+</head>
+<body>
+    
+    <h3 id="myheading" class="title" data-custom="example">DOM Node Objects <!-- This is comment in h3 tag --></h3>
+
+    <p id="para" class="text">
+        blanditiis estias! ti temporibus deserunt ipsam reprehenderit non quasi iure! <br>
+    </p>
+
+    <!-- DOM Node Object Properties -->
+    <script>
+       console.log(`DOM Tree : Node Object Properties`);
+       
+       // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       document.write(`<br> ----- Document ---- <br>`) 
+       document.write(`<b> nodeName: </b> ${document.nodeName} <br>`);
+       document.write(`<b> nodeType: </b> ${document.nodeType} <br>`);
+       document.write(`<b> nodeValue: </b> ${document.nodeValue} <br>`);
+
+      console.log(`nodeName: ${document.nodeName}`); 
+      console.log(`nodeType: ${document.nodeType}`);
+      console.log(`nodeValue: ${document.nodeValue}`);
+
+       // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       document.write(`<br> ---- Element ----- <br>`);
+       let element = document.getElementById('para')
+       document.write(`<b> nodeName: </b> ${element.nodeName} <br>`);
+       document.write(`<b> nodeType: </b> ${element.nodeType} <br>`);
+       document.write(`<b> nodeValue: </b> ${element.nodeValue} <br>`);
+
+      console.log(`nodeName: ${element.nodeName}`); 
+      console.log(`nodeType: ${element.nodeType}`);
+      console.log(`nodeValue: ${element.nodeValue}`);
+
+  
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        document.write(`<br> ----- Commnet---- <br>`);
+
+        let comment = document.getElementById("myheading");
+        /*
+        H3
+        |--- Text
+        |--- Comment
+
+        To access (traverse) the comment in H3 tag we have to use firstChild property
+        */
+
+        document.write(`<b>nodeName:</b> ${comment.firstChild.nextSibling.nodeName} <br>`);
+        document.write(`<b>nodeType:</b> ${comment.firstChild.nextSibling.nodeType} <br>`);
+        document.write(`<b>nodeValue:</b> ${comment.firstChild.nextSibling.nodeValue} <br>`);
+
+        console.log(`nodeName: ${comment.firstChild.nextSibling.nodeName}`);
+        console.log(`nodeType: ${comment.firstChild.nextSibling.nodeType}`); 
+        console.log(`nodeValue: ${comment.firstChild.nextSibling.nodeValue}`); 
+        
+      // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        document.write(`<br> ----- Text ---- <br>`);
+
+        let txt = document.getElementById("myheading");
+        /*
+        H3
+        |--- Text
+        |--- Comment
+        To access (traverse) the text in H3 tag we have to use firstChild property
+        */
+        // Get NodeValue
+        document.write(`<b>nodeName:</b> ${txt.firstChild.nodeName} <br>`);
+        document.write(`<b>nodeType:</b> ${txt.firstChild.nodeType} <br>`);
+        document.write(`<b>nodeValue:</b> ${txt.firstChild.nodeValue} <br>`);
+
+        console.log(`nodeName: ${txt.firstChild.nodeName}`);    
+        console.log(`nodeType: ${txt.firstChild.nodeType}`); 
+        console.log(`nodeValue: ${txt.firstChild.nodeValue}`); 
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        document.write(`Text (Get & Set nodeValue) ---- <br>`);
+
+        // Set NodeValue
+        let get_txt = document.getElementById("myheading").firstChild;
+        document.write(`<b>nodeValue</b> (Before Set) <b>:</b> ${get_txt.nodeValue} <br>`)
+
+        // Set new nodeValue
+        let new_txt_node = "This is New Text Node in H3 tag!";
+        get_txt.nodeValue = new_txt_node; // Correct property name
+
+        // Log the updated node value
+        console.log(`Updated nodeValue: ${get_txt.nodeValue}`);
+
+        // Write the updated value to the document
+        document.write(`<b>nodeValue</b> (After Set) <b>:</b> ${get_txt.nodeValue} <br>`);
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++s
+        document.write(`<br> ---- Attribute (name & value) ----- <br>`);
+        let attr = document.getElementById('myheading')
+        let first_id_name = attr.attributes[0].nodeName;
+        let first_id_value = attr.attributes[0].nodeValue;
+
+        let second_id_name = attr.attributes[1].nodeName;
+        let second_id_value = attr.attributes[1].nodeValue;
+
+        document.write(`<b>  ${second_id_name} : ${second_id_value} </b><br>`);
+        document.write(`<b>  ${first_id_name} : ${first_id_value} </b><br>`);
+
+        document.write(`<br> ---- Attributes with Length Property ----- <br>`);
+        let heading = document.getElementById('myheading');
+	    let len = heading.attributes.length;
+	    document.write(`Number of attributes: ${len}<br>`);
+	
+	    // Iterate through the attribute
+	    for(let attr of heading.attributes){
+		    document.write(`<b>${attr.name}</b> : <b>${attr.value}</b> <br>`);
+	    }
+           
+    </script>
+
+</body>
+</html>
