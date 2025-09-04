@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS: DOM Level 2 Event Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        div {
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            font-weight: 600;
+        }
+
+        /* Background colors for each div */
+        #one {
+            background-color: rgb(142, 200, 219);
+        }
+
+        #two {
+            background-color: rgb(250, 182, 246);
+        }
+
+       #three {
+            background-color: lightgreen;
+        }
+
+       #four {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <h3><span id="sub-span">DOM Level 2 Event Model :</span> Event Propagation</h3>
+
+    <h4>Event Capturing & Bubbling</h4>
+    <div id="one">1
+        <div id="two">2
+            <div id="three">3
+                <div id="four">4</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event Propagation (Bubbling & Capturing)
+
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        // let three = document.getElementById('three');
+        let four = document.getElementById('four');
+    
+        // // Capturing Phase (Trickling Down)
+        one.addEventListener('click', () => alert('Div 1 (Capturing)'), true);
+        two.addEventListener('click', () => alert('Div 2 (Capturing)'), true);
+        // three.addEventListener('click', () => alert('Div 3 (Capturing)'), true);
+        four.addEventListener('click', () => alert('Div 4 (Capturing)'), true);
+    
+        // Bubbling Phase (Propagating Up)
+        // Consider Div 4 is target element
+        // one.addEventListener('click', () => alert('Div 1 (Bubbling)'), false);
+        // two.addEventListener('click', () => alert('Div 2 (Bubbling)'), false);
+        // three.addEventListener('click', () => alert('Div 3 (Bubbling)'), false);
+        // four.addEventListener('click', () => alert('Div 4 (Target)'), false);
+    </script>
+</body>
+</html>

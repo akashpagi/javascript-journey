@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS: DOM Level 2 Event Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        div {
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            font-weight: 600;
+        }
+
+        /* Background colors for each div */
+        #one {
+            background-color: rgb(142, 200, 219);
+        }
+
+        #two {
+            background-color: rgb(250, 182, 246);
+        }
+
+       #three {
+            background-color: lightgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h3><span id="sub-span">DOM Level 2 Event Model :</span> Event Methods</h3>
+    <h4>stopPropagation(), stopImmediatePropagation() & preventDefault()</h4>
+    <div id="one">1
+        <div id="two">2
+            <div id="three">3
+            </div>
+        </div>
+    </div>
+
+    <a href="https://google.com" id="myLink">Go to Google</a>
+    
+    <script>
+        // Event Methods : stopPropagation() & stopImmediatePropagation()
+        let divOne = (e) => { 
+            e.currentTarget.style.backgroundColor = '#edbb99';
+            console.log("Div 1 clicked");
+        };
+        let divTwo = (e) => { 
+            e.currentTarget.style.backgroundColor = '#a085f2';
+            console.log("Div 2 clicked");
+            // e.stopPropagation(); // Stops event from propagating to parent div
+        };
+        let divThree = (e) => { 
+            e.currentTarget.style.backgroundColor = '#fc97b9';
+            console.log("Div 3 clicked");
+            e.stopImmediatePropagation();  
+        };
+        let divThreeNew = (e) => { 
+            e.currentTarget.style.border = '5px solid white';
+            console.log("Div 3  clicked");
+        };
+
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        let three = document.getElementById('three');
+        // Bubbling Phase (Propagating Up)
+        one.addEventListener('click', divOne, false);
+        two.addEventListener('click', divTwo, false);
+        three.addEventListener('click', divThree, false);
+        three.addEventListener('click', divThreeNew, false);
+
+        // preventDefault()
+        document.getElementById("myLink").addEventListener("click", function(e) {
+            e.preventDefault(); // Stops redirection
+            alert("Navigation prevented!");
+        });
+    </script>
+</body>
+</html>

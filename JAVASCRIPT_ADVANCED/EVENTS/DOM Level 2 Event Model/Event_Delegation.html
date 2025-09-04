@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS: DOM Level 2 Event Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #category {
+            list-style: none;
+            padding: 0;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 250px;
+        }
+
+        #category li {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s ease;
+        }
+
+        #category li:hover {
+            background: #e7eaea;
+            color: #0356b0;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3><span id="sub-span">DOM Level 2 Event Model :</span> Event Delegation</h3>
+    <div id="category">
+        <li id="laptops">Laptops</li>
+        <li id="cameras">Cameras</li>
+        <li id="mobiles">Mobiles</li>
+        <li id="shoes">Shoes</li>
+    </div>
+    <script>
+        // Event Delegation
+        let divCategory = document.getElementById('category');
+        
+        divCategory.addEventListener('click', (e) => {
+            // console.log(e.tagName);
+            if (e.target.tagName === "LI"){ // Note: tagName always returns an uppercase string (e.g., "LI", "DIV", "BUTTON").
+                alert(`You Clicked on ${e.target.innerText}`); //  You need to use template literals correctly.
+            }
+            // window.location.href = "/" + e.target.id;
+            // alert('Category parent Clicked !');
+        }, false);
+  
+    </script>
+</body>
+</html>

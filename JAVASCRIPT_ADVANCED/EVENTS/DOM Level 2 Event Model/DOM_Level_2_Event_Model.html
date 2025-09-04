@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS: DOM Level 2 Event Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        /* for id */
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        h4 {
+            color: #403d3efc;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .button {
+            margin: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #c3c5c7;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #3a274bdc;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.25rem;
+            padding: 12px 16px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+           
+        }
+
+        .button:hover {
+            background-color: #cfcfcf;
+        }
+
+        .button:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3 id="myheading"><span id="sub-span">DOM Level 2 </span>Event Model</h3>
+    <h5>addEventListner() Method</h5>
+    <button id="btn" class="button">Click Me!</button>
+
+    <h5>Solving Overwriting Event Handler of Multiple Button Problem !</h5>
+    <button id="mybtn1" class="button">Click Me!</button>
+
+    <h5>removeEventListner() Method</h5>
+    <button id="mybtn2" class="button">Click For Remove</button>
+
+    <script>
+        //
+        /*
+         DOM Level 2 Event Model
+        */
+     
+         /* addEventListener() Method*/
+
+        // let myBtn = document.getElementById('btn');
+        // element.addEventListener(event, handler, useCapture);
+
+        // // addEventListener() Using an Anonymous Function
+        // // myBtn.addEventListener("click", function(){ alert('Btn Clicked Using an Anonymous Function'); });
+
+        // // Using a named Function
+        // function show(){ 
+        //     alert('Btn Clicked Using a named Function !'); 
+        // };
+        // // document.getElementById('btn').addEventListener('mouseover', show);
+        // document.getElementById('btn').addEventListener('click', show);
+
+        // /*
+        // When you assign an event handler to an element using onclick = show, you do not use () because you're passing the function reference, not calling the function.
+        // Without (): You're passing the function reference to be executed when the event happens.
+        // With (): You're immediately invoking the function and passing its return value, which is not what you want when handling events.
+        // */
+        // // Solution : Overwriting Event Handler of Multiple Button
+        // function show1(){ alert('Btn Clicked 1'); };
+        // function show2(){ alert('Btn Clicked 2'); };
+        // // document.getElementById('mybtn1').onclick = show1;
+        // // document.getElementById('mybtn1').onclick = show2;
+        // document.getElementById('mybtn1').addEventListener('click', show1);
+        // document.getElementById('mybtn1').addEventListener('click', show2, true);
+
+        /* removeEventListener() Method */
+
+        let btn = document.getElementById('mybtn2');
+        
+        function show(){ 
+            alert('Btn Clicked'); 
+        };
+
+        btn.addEventListener('click', show, false);
+        btn.addEventListener('click', show, true);
+        
+        // btn.removeEventListener('click', show, false);
+        btn.removeEventListener('click', show, true);
+
+
+    </script>
+       
+</body>
+</html>

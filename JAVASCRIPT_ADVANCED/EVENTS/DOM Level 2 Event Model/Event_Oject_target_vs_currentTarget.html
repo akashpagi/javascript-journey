@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS: DOM Level 2 Event Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+
+        h3 {
+            color: #0356b0;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #sub-span {
+            color: #ec0d5f;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        div {
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            font-weight: 600;
+        }
+
+        /* Background colors for each div */
+        #one {
+            background-color: rgb(142, 200, 219);
+        }
+
+        #two {
+            background-color: rgb(250, 182, 246);
+        }
+
+       #three {
+            background-color: lightgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <h3><span id="sub-span">DOM Level 2 Event Model :</span> Event Object</h3>
+
+    <h4>target VS currentTarget</h4>
+    <div id="one" data-name="1">1
+        <div id="two" data-name="2">2
+            <div id="three" data-name="3">3
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event Object : Difference between target and currentTarget
+
+         // Bubbling Phase (Propagating Up)
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        let three = document.getElementById('three');
+    
+        one.addEventListener('click', 
+            (event) => {
+                console.log('1st Div');
+                console.log('target : ' + event.target.dataset.name);
+                console.log('currentTarget : ' + event.currentTarget.dataset.name);
+            } , false);
+
+        two.addEventListener('click', 
+            (event) => {
+                console.log('2nd Div'); 
+                console.log('target : ' + event.target.dataset.name);
+                console.log('currentTarget : ' + event.currentTarget.dataset.name);
+            } , false); 
+
+        three.addEventListener('click', 
+            (event) => {
+                console.log('3rd Div');
+                console.log('target : ' + event.target.dataset.name);
+                console.log('currentTarget : ' + event.currentTarget.dataset.name);
+            } , false);
+
+    </script>
+</body>
+</html> 
+
